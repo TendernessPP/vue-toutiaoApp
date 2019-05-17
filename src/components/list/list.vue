@@ -63,8 +63,22 @@
       <div class="app-list-body" v-if="!!$slots.body">
         <slot name="body"></slot>
       </div>
+      <div class="app-list-bodySpecial" v-if="!!$slots.bodySpecial">
+        <slot name="bodySpecial"></slot>
+      </div>
       <div class="app-list-footer" v-if="!!$slots.footer">
         <slot name="footer"></slot>
+      </div>
+    </div>
+    <div class="app-list-item" v-if="theme ===5">
+      <div class="app-list-top" v-if="!!$slots.top">
+        <slot name="top"></slot>
+      </div>
+      <div class="app-list-title" v-if="!!$slots.title">
+        <slot name="title"></slot>
+      </div>
+      <div class="app-list-body" v-if="!!$slots.body">
+        <slot name="body"></slot>
       </div>
     </div>
   </article>
@@ -115,6 +129,8 @@
           text-align: justify
           font-weight: 800
     &.app-list-theme1
+      &:not(:last-child)
+        margin-bottom: 0.16rem
       .app-list-title
           position: absolute
           top: 0.1rem
@@ -275,7 +291,7 @@
                 position: absolute
                 right: 0
                 top: 0
-                padding: 0 0.06rem
+                padding: 0.02rem 0.06rem
                 border: 1px solid #666
                 display: flex
                 align-items: center
@@ -314,7 +330,7 @@
               display: flex
               justify-content: center
               align-items: center
-              padding: 0 0.06rem
+              padding: 0.02rem 0.06rem
               border: 1px solid #666
               border-radius: 4px
               >i
@@ -353,4 +369,177 @@
               >i
                 margin-left: 0.1rem
                 font-size: 0.34rem
+    &.app-list-theme4
+      margin-top: 0.1rem
+      margin-bottom: 0.2rem
+      background-color: #fff
+      position: relative
+      &:after
+        display: block
+        position: absolute
+        left: 0
+        bottom: 0
+        border-top: 1px solid #e5e5e5
+        width: 100%
+        content: ''
+      .app-list-item
+        margin: 0 0.2rem
+        position: relative
+        text-align: left
+        .app-list-top
+          display: flex
+          justify-content: space-between
+          padding: 0.2rem 0
+          .top_left
+            display: flex
+            .img-wrapper
+                height: 0
+                overflow: hidden
+                width: 0.6rem
+                padding: 0.3rem 0
+                border-radius: 50%
+                >img
+                  width: 100%
+                  margin-top: -50%
+                  display: block
+                  border: none
+            .title
+              margin-left: 0.2rem
+              >span
+                display: block
+              .name
+                  margin-bottom: 0.1rem
+              .dedescription
+                  color: #666
+
+          .top_right
+            >a
+              display: inline-block
+              width: inherit
+              margin-right: 0.4rem
+              color: #ef4f4f
+              font-weight: 600
+            .delete
+              display: inline-block
+              padding: 0 0.06rem
+              border: 1px solid #666
+              border-radius: 4px
+              >i
+                font-size: 0.2rem
+        .app-list-body
+          .content
+            font-size: 0.28rem
+            padding: 0.14rem 0
+          .img-wrapper
+            >img
+              width: 32%
+              margin-right: 2%
+              &:nth-child(3)
+                  margin-right: 0
+        .app-list-footer
+          display: flex
+          padding: 0.16rem 0
+          >span
+            flex: 1
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 0.26rem
+            > i
+              margin-right: 0.16rem
+              font-size: 0.4rem
+        .app-list-bodySpecial
+          display: flex
+          margin-bottom: 0.2rem
+          .bodySpecial_left
+              flex: 1
+              .comment
+                display: block
+                margin-top: 0.2rem
+          .bodySpecial_right
+            flex: 0 0 2.4rem
+            margin-left: 0.2rem
+            >img
+              width: 100%
+              background-color: rgba(255,255,255,0.9)
+              border: none
+              display: block
+    &.app-list-theme5
+      background-color: #fff
+      &:not(:last-child)
+        margin-bottom: 0.16rem
+      .app-list-item
+        margin: 0 0.2rem
+        position: relative
+        text-align: left
+        .app-list-top
+          display: flex
+          justify-content: space-between
+          padding: 0.2rem 0
+          .top_left
+            display: flex
+            .img-wrapper
+              height: 0
+              overflow: hidden
+              width: 0.6rem
+              padding: 0.3rem 0
+              border-radius: 50%
+              >img
+                width: 100%
+                margin-top: -50%
+                display: block
+                border: none
+            .title
+              margin-left: 0.2rem
+              >span
+                display: block
+              .name
+                margin-bottom: 0.1rem
+              .fan
+                color: #666
+                .description
+                    margin-left: 0.2rem
+                    position: relative
+                    &:before
+                      position: absolute
+                      top: 0.12rem
+                      left: -0.14rem
+                      content: '.'
+                      width: 0.06rem
+                      height: 0.06rem
+                      background-color: #666
+          .top_right
+            .delete
+              display: inline-block
+              padding: 0 0.06rem
+              border: 1px solid #666
+              border-radius: 4px
+              >i
+                font-size: 0.2rem
+        .app-list-title
+          font-size: 0.32rem
+          padding-bottom: 0.2rem
+        .app-list-body
+          .img-wrapper
+            position: relative
+            >img
+              width: 100%
+            .LiveBroadcasting
+              position: absolute
+              top: 0.1rem
+              left: 0.1rem
+              padding: 0.06rem
+              border-radius: 4px
+              color: #fff
+              background-color: #ef4f4f
+              z-index: 2
+            .popularity
+              position: absolute
+              top: 0.12rem
+              left: 0.88rem
+              padding: 0.04rem 0.08rem
+              border-radius: 4px
+              color: #fff
+              background-color: #666
+              z-index: 1
 </style>

@@ -147,14 +147,18 @@
                     <span class="txt">查看全部 <i class="icon-guanbi"></i></span>
                   </template>
                   <template slot="top" v-if="item.top">
-                    <img :src="item.top.avata" alt="">
-                    <div>
-                      <span class="name">{{item.top.name}}</span>
-                      <span class="dedescription">{{item.top.description}}</span>
+                    <div class="top_left">
+                      <div class="img-wrapper">
+                        <img :src="item.top.avata" alt="">
+                      </div>
+                      <div class="title">
+                        <span class="name">{{item.top.name}}</span>
+                        <span class="dedescription">{{item.top.description}}</span>
+                      </div>
                     </div>
-                    <div class="option">
+                    <div class="top_right">
                       <a href="javascript: void(0)">关注</a>
-                      <span class="deledte"><i class="icon-guanbi"></i></span>
+                      <span class="delete"><i class="icon-guanbi"></i></span>
                     </div>
                   </template>
                   <template slot="body" v-if="item.body">
@@ -164,9 +168,58 @@
                     </div>
                   </template>
                   <template slot="footer" v-if="item.footer">
-                    <span class="forward"><i class="icon-guanbi"></i>{{item.footer.forward}}</span>
-                    <span class="comment"><i class="icon-guanbi"></i>{{item.footer.comment}}</span>
-                    <span class="like"><i class="icon-guanbi"></i>{{item.footer.like}}</span>
+                    <span class="forward"><i class="icon-zhuanfa"></i>{{item.footer.forward}}</span>
+                    <span class="comment"><i class="icon-62"></i>{{item.footer.comment}}</span>
+                    <span class="like"><i class="icon-dianzan"></i>{{item.footer.like}}</span>
+                  </template>
+                  <template slot="bodySpecial" v-if="item.bodySpecial">
+                    <div class="bodySpecial_left">
+                      <span class="txt">{{item.bodySpecial.leftContent}}</span>
+                      <span class="comment">{{item.bodySpecial.comment}}评论</span>
+                    </div>
+                    <div class="bodySpecial_right">
+                      <img :src="item.bodySpecial.rightBgImg" alt="">
+                    </div>
+                  </template>
+                </template>
+                <template v-else>
+                  <!--提示-->
+                  <div class="prompt" slot="other">
+                    <span class="time">{{item.time}}</span>前看到这里&nbsp&nbsp&nbsp&nbsp点击刷新<i class="icon-shuaxin"></i>
+                  </div>
+                </template>
+              </app-list>
+            </app-scroll>
+          </div>
+          <!--直播部分-->
+          <div v-if="item.text === '直播'" class="LiveBroadcast">
+            <app-scroll :pullUpLoad="pullUpLoad" :pullDownRefresh="pullDownRefresh" v-model="scrollLiveBroadcast"
+                        @pullingUp="scrollUP('LiveBroadcast')"
+                        @pullingDown="scrollDN('LiveBroadcast')">
+              <app-list v-for="(item,index) in LiveBroadcast" :key="index" :theme="item.theme">
+                <template v-if="item.id">
+                  <template slot="top" v-if="item.top">
+                    <div class="top_left">
+                      <div class="img-wrapper">
+                        <img :src="item.top.avata" alt="">
+                      </div>
+                      <div class="title">
+                        <span class="name">{{item.top.name}}</span>
+                        <span class="fan">{{item.top.fan}}粉丝 <span class="description" v-if="item.top.description">{{item.top.description}}</span></span>
+                      </div>
+                    </div>
+                    <div class="top_right">
+                      <span class="delete"><i class="icon-guanbi"></i></span>
+                    </div>
+                  </template>
+                  <template slot="title" v-if="item.title">{{item.title}}</template>
+                  <template slot="body" v-if="item.body">
+                    <div class="img-wrapper">
+                      <img :src="item.body.img" alt="">
+                      <span class="LiveBroadcasting"><i class="forward"></i>直播中</span>
+                      <span class="popularity">{{item.body.Popularity}}人气</span>
+                      <span class="icon"></span>
+                    </div>
                   </template>
                 </template>
                 <template v-else>
@@ -380,6 +433,7 @@
         //上拉刷新滚动加载所需参数
         scroll: 0,
         scrollRecord: 0,
+        scrollLiveBroadcast: 0,
         numScroll: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'],
         pullUpLoad: {
           txt: {
@@ -650,7 +704,7 @@
             id: 9,
             theme: 4,
             top: {
-              avata: 'https://via.placeholder.com/40x40?text=img',
+              avata: 'https://via.placeholder.com/80x80?text=img',
               name: '小奇趣摘',
               description: '知名搞笑自媒体'
             },
@@ -668,13 +722,161 @@
             }
           },
           {
+            id: 10,
+            theme: 4,
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '小鹿情感先生',
+              description: '优质情感领域创作者'
+            },
+            bodySpecial: {
+              leftContent: '50个拉升你和妹子关系的约会项目',
+              comment: 15,
+              rightBgImg: 'https://via.placeholder.com/200x100?text=img'
+            }
+          }
+        ],
+        //直播部分数据
+        LiveBroadcast: [
+          {
             id: 1,
-            theme: 2,
-            title: '习近平在全国工作会议上的讲话',
-            subtitle: {
-              name: '央视新闻网',
-              comment: 495,
-              time: '刚刚'
+            theme: 5,
+            title: '要想多钓鱼，早起来打窝',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '嘉铭海鲜户外美食',
+              fan: 2172
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '766'
+            }
+          },
+          {
+            id: 2,
+            theme: 5,
+            title: '血流成河-挑战上亿',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: 'Cen、磊哥',
+              fan: 8007,
+              description: '网吧负责人'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '4955'
+            }
+          },
+          {
+            id: 3,
+            theme: 5,
+            title: '可能我撞了南墙才回头吧',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '你de昭君',
+              description: '知名搞笑自媒体'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '766'
+            }
+          },
+          {
+            id: 4,
+            theme: 5,
+            title: '英雄联盟：峡谷中最亮的carry',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '怪蜀黍嘿咪',
+              description: '知名搞笑自媒体'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '766'
+            }
+          },
+          {
+            id: 5,
+            theme: 5,
+            title: '荒野大嫖客2： 线上对决，今天抢歪果仁',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '不良对长',
+              description: '游戏领域创作者'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '1520'
+            }
+          },
+          {
+            id: 6,
+            theme: 5,
+            title: '吞食天地孔明转',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '奔跑的投石车',
+              description: '游戏领域创作者'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '766'
+            }
+          },
+          {
+            id: 7,
+            theme: 5,
+            title: '要想多钓鱼，早起来打窝',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '小奇趣摘',
+              description: '知名搞笑自媒体'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '766'
+            }
+          },
+          {
+            id: 8,
+            theme: 5,
+            title: '要想多钓鱼，早起来打窝',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '小奇趣摘',
+              description: '知名搞笑自媒体'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '766'
+            }
+          },
+          {
+            id: 9,
+            theme: 5,
+            title: '要想多钓鱼，早起来打窝',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '小奇趣摘',
+              description: '知名搞笑自媒体'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '766'
+            }
+          },
+          {
+            id: 10,
+            theme: 5,
+            title: '要想多钓鱼，早起来打窝',
+            top: {
+              avata: 'https://via.placeholder.com/80x80?text=img',
+              name: '小奇趣摘',
+              description: '知名搞笑自媒体'
+            },
+            body: {
+              img: 'https://via.placeholder.com/700x400?text=img',
+              Popularity: '766'
             }
           }
         ],
@@ -804,7 +1006,7 @@
             }
             setTimeout(() => {
               if (this.typeScroll === 'UP' && num > 5) {
-                self.bodyList = [...self.bodyList, {theme: 1, time: 45}, ..._list]
+                self.bodyList = [...self.bodyList, { theme: 1, time: 45 }, ..._list]
                 self.scroll < 0 ? self.scroll = 1 : self.scroll++
               } else if (this.typeScroll === 'UP' && num <= 5) {
                 self.scroll === 0 ? self.scroll-- : self.scroll = 0
@@ -824,7 +1026,7 @@
             }
             setTimeout(() => {
               if (this.typeScroll === 'UP' && num > 5) {
-                self.recordList = [...self.recordList, {theme: 1, time: 45}, ..._list]
+                self.recordList = [...self.recordList, { theme: 1, time: 45 }, ..._list]
                 self.scrollRecord < 0 ? self.scrollRecord = 1 : self.scrollRecord++
               } else if (this.typeScroll === 'UP' && num <= 5) {
                 self.scrollRecord === 0 ? self.scrollRecord-- : self.scrollRecord = 0
@@ -834,6 +1036,27 @@
                 self.$set(this.pullDownRefresh, 'success', `已为您更新${_list.length}条数据！！！`)
               } else if (this.typeScroll === 'DN' && num <= 5) {
                 self.scrollRecord <= 0 ? self.scrollRecord-- : self.scrollRecord++
+                self.$set(this.pullDownRefresh, 'success', '已是最新数据！！！')
+              }
+            }, 1500)
+            break
+          case 'LiveBroadcast':
+            while (count-- && count-- > 1) {
+              _list.push(this.LiveBroadcast[count])
+            }
+            console.log(_list, num)
+            setTimeout(() => {
+              if (this.typeScroll === 'UP' && num > 5) {
+                self.LiveBroadcast = [...self.LiveBroadcast, { theme: 1, time: 45 }, ..._list]
+                self.scrollLiveBroadcast < 0 ? self.scrollLiveBroadcast = 1 : self.scrollLiveBroadcast++
+              } else if (this.typeScroll === 'UP' && num <= 5) {
+                self.scrollLiveBroadcast === 0 ? self.scrollLiveBroadcast-- : self.scrollLiveBroadcast = 0
+              } else if (this.typeScroll === 'DN' && num > 5) {
+                self.scrollLiveBroadcast <= 0 ? self.scrollLiveBroadcast-- : self.scrollLiveBroadcast++
+                self.LiveBroadcast = [..._list, { theme: 1, time: 45 }, ...self.LiveBroadcast]
+                self.$set(this.pullDownRefresh, 'success', `已为您更新${_list.length}条数据！！！`)
+              } else if (this.typeScroll === 'DN' && num <= 5) {
+                self.scrollLiveBroadcast <= 0 ? self.scrollLiveBroadcast-- : self.scrollLiveBroadcast++
                 self.$set(this.pullDownRefresh, 'success', '已是最新数据！！！')
               }
             }, 1500)
@@ -850,6 +1073,9 @@
           case 'record':
             this.getPostList(type)
             break
+          case 'LiveBroadcast':
+            this.getPostList(type)
+            break
         }
       },
       //下拉刷新
@@ -860,6 +1086,9 @@
             this.getPostList(type)
             break
           case 'record':
+            this.getPostList(type)
+            break
+          case 'LiveBroadcast':
             this.getPostList(type)
             break
         }

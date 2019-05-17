@@ -14,7 +14,9 @@
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
   #app-small-video
-    height: 100%
-    width:100%
-    position: relative
+    position: absolute
+    width: 100%
+    top: 0
+    bottom: 0.91rem
+    background-color aqua
 </style>

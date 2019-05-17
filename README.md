@@ -2,7 +2,7 @@
 
 > 这是用 **vue.js 3.0** 仿 **今日头条** 的移动端项目，结合了原生app的部分功能。
 ## 前言 ##
-本人平时喜欢看 *今日头条* ，看到里面不错的动画交互效果，想模仿一下，也是对自己学习成果的检验。
+本人平时喜欢看 *今日头条* ，看到里面不错的动画和交互效果，想模仿一下，也是对自己学习成果的检验。
 ### 技术栈 ###
  1. vue.js 3.0全家桶（vue/cli、vueX、vue-router）
  2. axios、
@@ -13,7 +13,8 @@
 > 暂无
 
 ### 项目效果图 ###
-![加载错误，请在src/static/screenshots中查看](./src/static/screenshots/1.gif)![加载错误，请在src/static/screenshots中查看](./src/static/screenshots/4.jpg)
+![加载错误，请在src/assets/image](./src/assets/image/视频页.png)![加载错误，请在src/assets/image中查看](./src/assets/image/推荐.png)
+![加载错误，请在src/assets/image中查看](./src/assets/image/直播.png)![加载错误，请在src/assets/image中查看](./src/assets/image/频道.png)
 ### 说明 ###
  5. 因为暂时不会写接口；**数据都是自己模拟的**。
  6. 此项目主要是对于vue.js的运用，在样式上无法完全还原app，可能有些地方稍微丑陋，望请谅解！
