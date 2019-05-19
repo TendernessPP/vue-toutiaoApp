@@ -81,6 +81,17 @@
         <slot name="body"></slot>
       </div>
     </div>
+    <div class="app-list-item" v-if="theme ===6">
+      <div class="app-list-title" v-if="!!$slots.title">
+        <slot name="title"></slot>
+      </div>
+      <div class="app-list-body" v-if="!!$slots.body">
+        <slot name="body"></slot>
+      </div>
+      <div class="app-list-footer" v-if="!!$slots.footer">
+        <slot name="footer"></slot>
+      </div>
+    </div>
   </article>
 </template>
 
@@ -89,7 +100,7 @@
     props: {
       theme: {
         validator(value) {
-          return ['1', '2', '3', '4', '5'].indexOf(value + '') > -1
+          return ['1', '2', '3', '4', '5', '6'].indexOf(value + '') > -1
         },
         default: '1'
       }
@@ -301,14 +312,20 @@
                   font-size: 0.2rem
         &.left_right
             display: flex
+            padding: 0.2rem 0
             .left
               flex: 1
               overflow: hidden
+              display: flex
+              flex-direction:column
+              justify-content: space-between
+              padding: 0.1rem 0
               .app-list-title
                 word-wrap:break-word
                 word-break:break-all
+                padding: 0
               .app-list-subtitle
-                padding-bottom: 0
+                padding-bottom: 0.1rem
             .app-list-img
                 flex: 0 0 2.4rem
                 margin-left: 0.2rem
@@ -453,6 +470,10 @@
           margin-bottom: 0.2rem
           .bodySpecial_left
               flex: 1
+              padding: 0.1rem 0
+              display: flex
+              flex-direction: column
+              justify-content: space-between
               .comment
                 display: block
                 margin-top: 0.2rem
@@ -542,4 +563,48 @@
               color: #fff
               background-color: #666
               z-index: 1
+    &.app-list-theme6
+      display: inline-block
+      width: 50%
+      &:nth-child(even)
+          .app-list-body
+            position:relative
+            left: 1%
+      .app-list-item
+        position: relative
+        text-align left
+        .app-list-title
+          position: absolute
+          bottom: 0.6rem
+          left: 0
+          width: 100%
+          font-size: 0.28rem
+          padding: 0 0.1rem
+          overflow: hidden
+          display: -webkit-box
+          -webkit-line-clamp: 2
+          -webkit-box-orient: vertical
+          word-break: break-all
+          text-overflow: ellipsis
+          line-height: 1.5
+        .app-list-body
+            width: 99%
+            overflow: hidden
+            >img
+              width: 100%
+              border: none
+              display: block
+        .app-list-footer
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 0.6rem
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 0 0.1rem
+            .play
+              display: flex
+              align-items: center
 </style>

@@ -215,7 +215,7 @@
         .slide-group
             position: relative
             overflow: hidden
-            white-space: nowrap
+            //white-space: nowrap
             .slide-item
                 float: left
                 box-sizing: border-box

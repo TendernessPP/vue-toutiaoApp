@@ -454,10 +454,12 @@
             id: 1,
             theme: 1,
             title: '有哪些你该懂却不懂的人际交往小常识',
-            img: 'https://via.placeholder.com/700x400?text=video',
+            // img: 'https://via.placeholder.com/700x400?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '3',
-            avata: 'https://via.placeholder.com/40x40/3eede7?text=avata',
+            // avata: 'https://via.placeholder.com/40x40/3eede7?text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '土豆妹小明',
             attention: 0,
             comment: 604,
@@ -467,10 +469,12 @@
             id: 2,
             theme: 1,
             title: '女儿出国回来，亲爹这表现，醋意太明显！哈哈',
-            img: 'https://via.placeholder.com/700x400/177cb0?text=video',
+            // img: 'https://via.placeholder.com/700x400/177cb0?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '176',
-            avata: 'https://via.placeholder.com/40x40/177cb0?text=avata',
+            // avata: 'https://via.placeholder.com/40x40/177cb0?text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '林间白汇',
             attention: 0,
             comment: 197
@@ -479,10 +483,12 @@
             id: 3,
             theme: 1,
             title: '人类首张黑洞照片到底打开了多少和脑洞？',
-            img: 'https://via.placeholder.com/700x400/edd1d8?text=video',
+            // img: 'https://via.placeholder.com/700x400/edd1d8?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '1176',
-            avata: 'https://via.placeholder.com/40x40/edd1d8?text=avata',
+            // avata: 'https://via.placeholder.com/40x40/edd1d8?text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '知乎',
             attention: 0,
             comment: 604
@@ -491,10 +497,12 @@
             id: 4,
             theme: 1,
             title: '我是憋不住笑了,难道这就是独生子女的好处？',
-            img: 'https://via.placeholder.com/700x400/f3f9f1?text=video',
+            // img: 'https://via.placeholder.com/700x400/f3f9f1?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '176',
-            avata: 'https://via.placeholder.com/40x40/f3f9f1?text=avata',
+            // avata: 'https://via.placeholder.com/40x40/f3f9f1?text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '寻找奇异之旅',
             attention: 0,
             comment: 595
@@ -503,10 +511,12 @@
             id: 5,
             theme: 1,
             title: '本来以为就是画个老虎，没想到惊喜全在后面啊',
-            img: 'https://via.placeholder.com/700x400/bddd22?text=video',
+            // img: 'https://via.placeholder.com/700x400/bddd22?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '176',
-            avata: 'https://via.placeholder.com/40x40/bddd22text=avata',
+            // avata: 'https://via.placeholder.com/40x40/bddd22text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '七千电影',
             attention: 0,
             comment: 33
@@ -515,10 +525,12 @@
             id: 6,
             theme: 1,
             title: '复联4 我灭霸也室友粉丝的人',
-            img: 'https://via.placeholder.com/700x400/ff4777?text=video',
+            // img: 'https://via.placeholder.com/700x400/ff4777?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '1776',
-            avata: 'https://via.placeholder.com/40x40/ff4777text=avata',
+            // avata: 'https://via.placeholder.com/40x40/ff4777text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '油脂的小孩',
             attention: 0,
             comment: 16
@@ -527,10 +539,12 @@
             id: 7,
             theme: 1,
             title: '万万没想到这是王大锤配的音',
-            img: 'https://via.placeholder.com/700x400/177cb0?text=video',
+            // img: 'https://via.placeholder.com/700x400/177cb0?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '5776',
-            avata: 'https://via.placeholder.com/40x40/177cb0text=avata',
+            // avata: 'https://via.placeholder.com/40x40/177cb0text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '志则、',
             attention: 0,
             comment: 116
@@ -539,10 +553,12 @@
             id: 8,
             theme: 1,
             title: '人类首张黑洞照片到底打开了多少和脑洞？',
-            img: 'https://via.placeholder.com/700x400/edd1d8?text=video',
+            // img: 'https://via.placeholder.com/700x400/edd1d8?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '1176',
-            avata: 'https://via.placeholder.com/40x40/edd1d8?text=avata',
+            // avata: 'https://via.placeholder.com/40x40/edd1d8?text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '知乎',
             attention: 0,
             comment: 604
@@ -551,10 +567,12 @@
             id: 9,
             theme: 1,
             title: '我是憋不住笑了,难道这就是独生子女的好处？',
-            img: 'https://via.placeholder.com/700x400/f3f9f1?text=video',
+            // img: 'https://via.placeholder.com/700x400/f3f9f1?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '176',
-            avata: 'https://via.placeholder.com/40x40/f3f9f1?text=avata',
+            // avata: 'https://via.placeholder.com/40x40/f3f9f1?text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '寻找奇异之旅',
             attention: 0,
             comment: 595
@@ -563,10 +581,12 @@
             id: 10,
             theme: 1,
             title: '本来以为就是画个老虎，没想到惊喜全在后面啊',
-            img: 'https://via.placeholder.com/700x400/bddd22?text=video',
+            // img: 'https://via.placeholder.com/700x400/bddd22?text=video',
+            img: require('../assets/image/700x400.png'),
             bofang: 919,
             time: '176',
-            avata: 'https://via.placeholder.com/40x40/bddd22text=avata',
+            // avata: 'https://via.placeholder.com/40x40/bddd22text=avata',
+            avata: require('../assets/image/f3f9f1.png'),
             name: '七千电影',
             attention: 0,
             comment: 33
@@ -607,9 +627,9 @@
               time: '17分钟前'
             },
             imgs: [
-              { src: 'https://via.placeholder.com/200x100?text=img' },
-              { src: 'https://via.placeholder.com/200x100?text=img' },
-              { src: 'https://via.placeholder.com/200x100?text=img' }
+              { src: require('../assets/image/200x100.png') },
+              { src: require('../assets/image/200x100.png') },
+              { src: require('../assets/image/200x100.png') }
             ],
             delete: true
           },
@@ -624,15 +644,18 @@
             },
             advertising: {
               txt: '星辰奇缘:爆无级别',
-              avata: 'https://via.placeholder.com/40x40?text=avata',
-              bgImg: 'https://via.placeholder.com/700x400?text=bgImg'
+              avata: require('../assets/image/80x80.png'),
+              // avata: 'https://via.placeholder.com/40x40?text=avata',
+              bgImg: require('../assets/image/700x400.png')
+              // bgImg: 'https://via.placeholder.com/700x400?text=bgImg'
             }
           },
           {
             id: 5,
             theme: 2,
             title: '霸王的大陆，打骂我都能抗住，就怕关机丢记录',
-            img: 'https://via.placeholder.com/200x100?text=bgImg',
+            // img: 'https://via.placeholder.com/200x100?text=bgImg',
+            img: require('../assets/image/200x100.png'),
             subtitle: {
               name: '82电玩大叔',
               comment: 32,
@@ -651,7 +674,7 @@
               time: '15分钟前'
             },
             imgs: [
-              { src: 'https://via.placeholder.com/200x100?text=img' }
+              { src: require('../assets/image/200x100.png') }
             ],
             delete: true
           },
@@ -662,20 +685,20 @@
             titleDelete: true,
             carAdvertising: [
               {
-                src: 'https://via.placeholder.com/200x100?text=img',
+                src: require('../assets/image/200x100.png'),
                 name: '五菱宏光',
                 subscription: '最低报价优惠23.36%',
                 hot: true,
                 btnTxt: '去询价'
               },
               {
-                src: 'https://via.placeholder.com/200x100?text=img',
+                src: require('../assets/image/200x100.png'),
                 name: 'Urus',
                 subscription: '290.00万起',
                 btnTxt: '去询价'
               },
               {
-                src: 'https://via.placeholder.com/200x100?text=img',
+                src: require('../assets/image/200x100.png'),
                 name: '奥迪R8',
                 subscription: '最低报价优惠28.31%',
                 btnTxt: '去询价'
@@ -694,9 +717,9 @@
               time: '1小时前'
             },
             imgs: [
-              { src: 'https://via.placeholder.com/200x100?text=img' },
-              { src: 'https://via.placeholder.com/200x100?text=img' },
-              { src: 'https://via.placeholder.com/200x100?text=img' }
+              { src: require('../assets/image/200x100.png') },
+              { src: require('../assets/image/200x100.png') },
+              { src: require('../assets/image/200x100.png') }
             ],
             delete: true
           },
@@ -704,15 +727,16 @@
             id: 9,
             theme: 4,
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '小奇趣摘',
+              avata: require('../assets/image/80x80.png'),
               description: '知名搞笑自媒体'
             },
             body: {
               content: '明天就要出院了怎么办！好难过！请大家支招，有没有什么办法多住一段时间',
               imgs: [
-                { src: 'https://via.placeholder.com/200x100?text=img' },
-                { src: 'https://via.placeholder.com/200x100?text=img' }
+                { src: require('../assets/image/200x100.png') },
+                { src: require('../assets/image/200x100.png') }
               ]
             },
             footer: {
@@ -725,14 +749,16 @@
             id: 10,
             theme: 4,
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '小鹿情感先生',
+              avata: require('../assets/image/80x80.png'),
               description: '优质情感领域创作者'
             },
             bodySpecial: {
               leftContent: '50个拉升你和妹子关系的约会项目',
               comment: 15,
-              rightBgImg: 'https://via.placeholder.com/200x100?text=img'
+              // rightBgImg: 'https://via.placeholder.com/200x100?text=img'
+              rightBgImg: require('../assets/image/200x100.png')
             }
           }
         ],
@@ -743,12 +769,14 @@
             theme: 5,
             title: '要想多钓鱼，早起来打窝',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
+              avata: require('../assets/image/80x80.png'),
               name: '嘉铭海鲜户外美食',
               fan: 2172
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '766'
             }
           },
@@ -757,13 +785,15 @@
             theme: 5,
             title: '血流成河-挑战上亿',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: 'Cen、磊哥',
+              avata: require('../assets/image/80x80.png'),
               fan: 8007,
               description: '网吧负责人'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '4955'
             }
           },
@@ -772,12 +802,14 @@
             theme: 5,
             title: '可能我撞了南墙才回头吧',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '你de昭君',
+              avata: require('../assets/image/80x80.png'),
               description: '知名搞笑自媒体'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '766'
             }
           },
@@ -786,12 +818,14 @@
             theme: 5,
             title: '英雄联盟：峡谷中最亮的carry',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '怪蜀黍嘿咪',
+              avata: require('../assets/image/80x80.png'),
               description: '知名搞笑自媒体'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '766'
             }
           },
@@ -800,12 +834,14 @@
             theme: 5,
             title: '荒野大嫖客2： 线上对决，今天抢歪果仁',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '不良对长',
+              avata: require('../assets/image/80x80.png'),
               description: '游戏领域创作者'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '1520'
             }
           },
@@ -814,12 +850,14 @@
             theme: 5,
             title: '吞食天地孔明转',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '奔跑的投石车',
+              avata: require('../assets/image/80x80.png'),
               description: '游戏领域创作者'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '766'
             }
           },
@@ -828,12 +866,14 @@
             theme: 5,
             title: '要想多钓鱼，早起来打窝',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '小奇趣摘',
+              avata: require('../assets/image/80x80.png'),
               description: '知名搞笑自媒体'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '766'
             }
           },
@@ -842,12 +882,14 @@
             theme: 5,
             title: '要想多钓鱼，早起来打窝',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '小奇趣摘',
+              avata: require('../assets/image/80x80.png'),
               description: '知名搞笑自媒体'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '766'
             }
           },
@@ -856,12 +898,14 @@
             theme: 5,
             title: '要想多钓鱼，早起来打窝',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '小奇趣摘',
+              avata: require('../assets/image/80x80.png'),
               description: '知名搞笑自媒体'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '766'
             }
           },
@@ -870,12 +914,14 @@
             theme: 5,
             title: '要想多钓鱼，早起来打窝',
             top: {
-              avata: 'https://via.placeholder.com/80x80?text=img',
+              // avata: 'https://via.placeholder.com/80x80?text=img',
               name: '小奇趣摘',
+              avata: require('../assets/image/80x80.png'),
               description: '知名搞笑自媒体'
             },
             body: {
-              img: 'https://via.placeholder.com/700x400?text=img',
+              // img: 'https://via.placeholder.com/700x400?text=img',
+              img: require('../assets/image/700x400.png'),
               Popularity: '766'
             }
           }
