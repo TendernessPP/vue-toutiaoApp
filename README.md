@@ -13,8 +13,8 @@
 > 暂无
 
 ### 项目效果图 ###
-![加载错误，请在src/assets/image中查看](./src/assets/image/首页视频页.PNG)![加载错误，请在src/assets/image中查看](./src/assets/image/首页推荐页1.PNG)
-![加载错误，请在src/assets/image中查看](./src/assets/image/首页直播页.PNG)![加载错误，请在src/assets/image中查看](./src/assets/image/小视频推荐页.PNG)
+![加载错误，请在src/assets/image中查看](./src/assets/image/首页视频.png)![加载错误，请在src/assets/image中查看](./src/assets/image/首页推荐1.png)
+![加载错误，请在src/assets/image中查看](./src/assets/image/首页直播.png)![加载错误，请在src/assets/image中查看](./src/assets/image/小视频推荐.png)
 ### 说明 ###
  5. 因为暂时不会写接口；**数据都是自己模拟的**。
  6. 此项目主要是对于vue.js的运用，在样式上无法完全还原app，可能有些地方稍微丑陋，望请谅解！
