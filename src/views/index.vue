@@ -238,23 +238,33 @@
                         @pullingDown="scrollDN('video')">
               <app-list v-for="(item,index) in bodyList" :key="index" :theme="item.theme">
                 <template v-if="item.id">
-                  <img :src="item.img" alt="" slot="img">
-                  <span slot="title">{{item.title}}</span>
-                  <span slot="bofang">{{item.bofang}}次播放</span>
-                  <span slot="time">{{item.time|formatTime}}</span>
+                  <!--<img :src="item.img" alt="" slot="img">-->
+                  <div class="video" style="width: 100%;height: 4rem" slot="img">
+                    <video-player  class="vjs-custom-skin"
+                                   :ref="item.videoPlayerOptions.ref"
+                                   :options="item.videoPlayerOptions"
+                                   :playsinline="true"
+                                   @play="onPlayerPlay($event,item)"
+                                   @pause="onPlayerPause($event,item)"
+                    >
+                    </video-player>
+                  </div>
+                  <span slot="title" v-if="!item.videoShow">{{item.title}}</span>
+                  <span slot="bofang" v-if="!item.videoShow">{{item.bofang}}次播放</span>
+                  <span slot="time" v-if="!item.videoShow">{{item.time|formatTime}}</span>
                   <div slot="other" class="list-bottom">
                     <div class="list-bottom_left">
-              <span class="avata">
-                <img :src="item.avata" alt="">
-              </span>
+                      <span class="avata">
+                        <img :src="item.avata" alt="">
+                      </span>
                       <span class="name">{{item.name}}</span>
                       <span class="attention">{{item.attention|filterComment}}</span>
                     </div>
                     <div class="list-bottom_right">
                       <span class="comment"><i class="icon-62"></i>{{item.comment}}</span>
                       <span class="operating">
-                  <i class="icon-more" @click="clickOperating"></i>
-                </span>
+                        <i class="icon-more" @click="clickOperating"></i>
+                     </span>
                     </div>
                   </div>
                 </template>
@@ -301,6 +311,17 @@
     },
     data() {
       return {
+        playerOptions: {
+          autoplay: false,
+          muted: false,
+          language: 'en',
+          playbackRates: [0.7, 1.0, 1.5, 2.0],
+          sources: [{
+            type: 'video/mp4',
+            src: 'http://vjs.zencdn.net/v/oceans.mp4'
+          }],
+          poster: require('../assets/image/700x400.png')
+        },
         num: 20,
         typeChannel: false,
         active: 3,
@@ -453,9 +474,28 @@
           {
             id: 1,
             theme: 1,
+            videoShow: false,
             title: '有哪些你该懂却不懂的人际交往小常识',
             // img: 'https://via.placeholder.com/700x400?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '1',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '3',
             // avata: 'https://via.placeholder.com/40x40/3eede7?text=avata',
@@ -468,9 +508,28 @@
           {
             id: 2,
             theme: 1,
+            videoShow: false,
             title: '女儿出国回来，亲爹这表现，醋意太明显！哈哈',
             // img: 'https://via.placeholder.com/700x400/177cb0?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '2',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '176',
             // avata: 'https://via.placeholder.com/40x40/177cb0?text=avata',
@@ -482,9 +541,28 @@
           {
             id: 3,
             theme: 1,
+            videoShow: false,
             title: '人类首张黑洞照片到底打开了多少和脑洞？',
             // img: 'https://via.placeholder.com/700x400/edd1d8?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '3',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '1176',
             // avata: 'https://via.placeholder.com/40x40/edd1d8?text=avata',
@@ -496,9 +574,28 @@
           {
             id: 4,
             theme: 1,
+            videoShow: false,
             title: '我是憋不住笑了,难道这就是独生子女的好处？',
             // img: 'https://via.placeholder.com/700x400/f3f9f1?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '4',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '176',
             // avata: 'https://via.placeholder.com/40x40/f3f9f1?text=avata',
@@ -510,9 +607,28 @@
           {
             id: 5,
             theme: 1,
+            videoShow: false,
             title: '本来以为就是画个老虎，没想到惊喜全在后面啊',
             // img: 'https://via.placeholder.com/700x400/bddd22?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '5',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '176',
             // avata: 'https://via.placeholder.com/40x40/bddd22text=avata',
@@ -524,9 +640,28 @@
           {
             id: 6,
             theme: 1,
+            videoShow: false,
             title: '复联4 我灭霸也室友粉丝的人',
             // img: 'https://via.placeholder.com/700x400/ff4777?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '6',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '1776',
             // avata: 'https://via.placeholder.com/40x40/ff4777text=avata',
@@ -538,9 +673,28 @@
           {
             id: 7,
             theme: 1,
+            videoShow: false,
             title: '万万没想到这是王大锤配的音',
             // img: 'https://via.placeholder.com/700x400/177cb0?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '7',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '5776',
             // avata: 'https://via.placeholder.com/40x40/177cb0text=avata',
@@ -552,9 +706,28 @@
           {
             id: 8,
             theme: 1,
+            videoShow: false,
             title: '人类首张黑洞照片到底打开了多少和脑洞？',
             // img: 'https://via.placeholder.com/700x400/edd1d8?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '8',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '1176',
             // avata: 'https://via.placeholder.com/40x40/edd1d8?text=avata',
@@ -566,9 +739,28 @@
           {
             id: 9,
             theme: 1,
+            videoShow: false,
             title: '我是憋不住笑了,难道这就是独生子女的好处？',
             // img: 'https://via.placeholder.com/700x400/f3f9f1?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '9',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '176',
             // avata: 'https://via.placeholder.com/40x40/f3f9f1?text=avata',
@@ -580,9 +772,28 @@
           {
             id: 10,
             theme: 1,
+            videoShow: false,
             title: '本来以为就是画个老虎，没想到惊喜全在后面啊',
             // img: 'https://via.placeholder.com/700x400/bddd22?text=video',
             img: require('../assets/image/700x400.png'),
+            videoPlayerOptions: {
+              ref: '10',
+              autoplay: false,
+              muted: false,
+              language: 'en',
+              playbackRates: [0.7, 1.0, 1.5, 2.0],
+              sources: [{
+                type: 'video/mp4',
+                src: 'http://vjs.zencdn.net/v/oceans.mp4'
+              }],
+              poster: require('../assets/image/700x400.png'),
+              controlBar: {
+                timeDivider: true,
+                durationDisplay: true,
+                remainingTimeDisplay: false,
+                fullscreenToggle: false
+              }
+            },
             bofang: 919,
             time: '176',
             // avata: 'https://via.placeholder.com/40x40/bddd22text=avata',
@@ -1008,6 +1219,14 @@
       }
     },
     methods: {
+      onPlayerPlay(player, item) {
+        console.log(item)
+        this.$set(item, 'videoShow', true)
+        console.log('player play!', player)
+      },
+      onPlayerPause(player) {
+        console.log('player pause!', player)
+      },
       //推荐广告下载
       goDownLoad() {
         this.$dialog.toast(

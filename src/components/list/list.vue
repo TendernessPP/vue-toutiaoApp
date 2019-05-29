@@ -3,7 +3,7 @@
     <div class="app-list-item" v-if="theme ===1">
       <div class="app-list-img" v-if="!!$slots.img">
         <slot name="img"></slot>
-        <span class="icon"></span>
+        <!--<span class="icon"></span>-->
         <span class="bofang">
           <slot name="bofang"></slot>
         </span>
@@ -80,6 +80,9 @@
       <div class="app-list-body" v-if="!!$slots.body">
         <slot name="body"></slot>
       </div>
+      <div class="app-list-footer" v-if="!!$slots.footer">
+        <slot name="footer"></slot>
+      </div>
     </div>
     <div class="app-list-item" v-if="theme ===6">
       <div class="app-list-title" v-if="!!$slots.title">
@@ -92,6 +95,14 @@
         <slot name="footer"></slot>
       </div>
     </div>
+    <div class="app-list-item" v-if="theme ===7">
+      <div class="app-list-top" v-if="!!$slots.top">
+        <slot name="top"></slot>
+      </div>
+      <div class="app-list-body" v-if="!!$slots.body">
+        <slot name="body"></slot>
+      </div>
+    </div>
   </article>
 </template>
 
@@ -100,7 +111,7 @@
     props: {
       theme: {
         validator(value) {
-          return ['1', '2', '3', '4', '5', '6'].indexOf(value + '') > -1
+          return ['1', '2', '3', '4', '5', '6','7'].indexOf(value + '') > -1
         },
         default: '1'
       }
@@ -153,6 +164,30 @@
           text-align: left
       .app-list-img
           position: relative
+          .vjs-custom-skin
+            width: 100%
+            height: 200px
+            /deep/ .video-js
+              width: 100%
+              height: 100%
+              .vjs-playback-rate,.vjs-volume-panel
+                display: none
+              .vjs-tech
+                width: 100%
+                height: 100%
+                display: block
+                object-fit: fill
+              .vjs-poster
+                background-size: 100% 100%
+              .vjs-big-play-button
+                width: 0.8rem!important
+                height: 0.8rem!important
+                line-height: 0.8rem!important
+                margin: 0!important
+                border-radius: 50%
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
           .icon
             width: 0.8rem
             height: 0.8rem
@@ -489,6 +524,11 @@
       background-color: #fff
       &:not(:last-child)
         margin-bottom: 0.16rem
+      &.is-fullScreen
+        .app-list-item
+          margin: 0
+          .app-list-top,.app-list-title
+            margin: 0 0.2rem
       .app-list-item
         margin: 0 0.2rem
         position: relative
@@ -563,6 +603,18 @@
               color: #fff
               background-color: #666
               z-index: 1
+        .app-list-footer
+          display: flex
+          padding: 0.16rem 0
+          >span
+            flex: 1
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 0.26rem
+            > i
+              margin-right: 0.16rem
+              font-size: 0.4rem
     &.app-list-theme6
       display: inline-block
       width: 50%
@@ -574,6 +626,7 @@
         position: relative
         text-align left
         .app-list-title
+          z-index: 1
           position: absolute
           bottom: 0.6rem
           left: 0
@@ -607,4 +660,58 @@
             .play
               display: flex
               align-items: center
+    &.app-list-theme7
+      background-color: #fff
+      &:not(:last-child)
+        margin-bottom: 0.16rem
+      .app-list-item
+        //margin: 0 0.2rem
+        position: relative
+        text-align: left
+        .app-list-top
+          display: flex
+          justify-content: space-between
+          padding: 0.2rem 0
+          margin: 0 0.2rem
+          .top_left
+            display: flex
+            .img-wrapper
+              height: 0
+              overflow: hidden
+              width: 0.6rem
+              padding: 0.3rem 0
+              border-radius: 50%
+              >img
+                width: 100%
+                margin-top: -50%
+                display: block
+                border: none
+            .title
+              margin-left: 0.2rem
+              >span
+                display: block
+              .name
+                margin-bottom: 0.1rem
+              .fan
+                color: #666
+                .description
+                  margin-left: 0.2rem
+                  position: relative
+                  &:before
+                    position: absolute
+                    top: 0.12rem
+                    left: -0.14rem
+                    content: '.'
+                    width: 0.06rem
+                    height: 0.06rem
+                    background-color: #666
+          .top_right
+            display: flex
+            align-items: center
+        .app-list-body
+          .img-wrapper
+            >img
+              width: 32%
+              &:not(:last-child)
+                margin-right: 2%
 </style>

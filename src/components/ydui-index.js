@@ -11,6 +11,7 @@ import { Popup } from 'vue-ydui/dist/lib.rem/popup'
 import { Slider, SliderItem } from 'vue-ydui/dist/lib.rem/slider'
 import { Input } from 'vue-ydui/dist/lib.rem/input'
 import { Search } from 'vue-ydui/dist/lib.rem/search'
+import { CellGroup, CellItem } from 'vue-ydui/dist/lib.rem/cell'
 Vue.component(Button.name, Button)
 Vue.component(ButtonGroup.name, ButtonGroup)
 Vue.component(ActionSheet.name, ActionSheet)
@@ -27,3 +28,5 @@ Vue.component(Slider.name, Slider)
 Vue.component(SliderItem.name, SliderItem)
 Vue.component(Input.name, Input)
 Vue.component(Search.name, Search)
+Vue.component(CellGroup.name, CellGroup);
+Vue.component(CellItem.name, CellItem);
